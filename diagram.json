@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-mega",
+      "id": "mega",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -156.8,
+      "left": -23.2,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -318.8,
+      "left": 418.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 198,
+      "left": 71,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 215.15,
+      "left": 124.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 322.8,
+      "left": 80.6,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 253.55,
+      "left": 172.8,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    ["lcd1:GND", "mega:GND.1", "black", ["h0"]],
+    ["lcd1:VCC", "mega:5V.1", "red", ["h0"]],
+    ["lcd1:SDA", "mega:20", "green", ["h0"]],
+    ["lcd1:SCL", "mega:21", "green", ["h0"]],
+    ["keypad1:R1", "mega:23", "green", ["v0"]],
+    ["keypad1:R2", "mega:25", "green", ["v0"]],
+    ["keypad1:R3", "mega:27", "green", ["v0"]],
+    ["keypad1:R4", "mega:29", "green", ["v0"]],
+    ["keypad1:C1", "mega:31", "green", ["v0"]],
+    ["keypad1:C2", "mega:33", "green", ["v0"]],
+    ["keypad1:C3", "mega:35", "green", ["v0"]],
+    ["keypad1:C4", "mega:37", "green", ["v0"]],
+    ["mega:A0", "r1:2", "green", ["v0"]],
+    ["led1:A", "r1:1", "green", ["v-19.2", "h28.8"]],
+    ["mega:GND.4", "led1:C", "black", ["v116.75", "h-274.6"]],
+    ["r2:2", "mega:A3", "green", ["v0"]],
+    ["led2:A", "r2:1", "green", ["v0", "h67.2"]],
+    ["led2:C", "mega:GND.5", "green", ["v9.6", "h278.8"]]
+  ],
+  "dependencies": {}
+}
